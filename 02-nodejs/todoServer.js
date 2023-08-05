@@ -41,9 +41,16 @@
  */
 const express = require('express');
 const bodyParser = require('body-parser');
-
+let todos =[];
+console.log(todos)
 const app = express();
 
+app.get("/todos",(req,res)=>{
+  res.json(todos)
+})
+app.get("/",(req,res)=>{
+  res.json("todos list")
+})
 app.use(bodyParser.json());
-
+app.listen(3000)
 module.exports = app;
